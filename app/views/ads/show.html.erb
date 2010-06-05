@@ -1,0 +1,55 @@
+<p>
+	<b>Name:</b>
+	<%=h @ad.name %>
+</p>
+
+<p>
+	<b>Html:</b>
+	<%=h @ad.html %>
+</p>
+
+<p>
+	<b>Frequency:</b>
+	<%=h @ad.frequency %>
+</p>
+
+<p>
+	<b>Start date:</b>
+	<%=h @ad.start_date %>
+</p>
+
+<p>
+	<b>End date:</b>
+	<%=h @ad.end_date %>
+</p>
+
+<p>
+	<b>Format:</b>
+	<%=h @ad.format %>
+</p>
+
+<p>
+	<b>Location:</b>
+	<% @ad.ad_locations.each do |location| %>
+		<%=h location.location %>
+	<% end %>
+</p>
+
+<p>
+	<b>Published:</b>
+	<%=h @ad.published %>
+</p>
+
+<p>
+	<b>Time constrained:</b>
+	<%=h @ad.time_constrained %>
+</p>
+
+<p>
+	<b>Preview:</b>
+	<%= @ad.html %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

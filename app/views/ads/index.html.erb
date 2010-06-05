@@ -1,0 +1,40 @@
+<h1>Listing ads</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Advertiser</th>
+    <th>Frequency</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Format</th>
+    <th>Location</th>
+    <th>Published</th>
+    <th>Time constrained</th>
+  </tr>
+
+<% @ads.each do |ad| %>
+  <tr>
+    <td><%=h ad.name %></td>
+    <td><%=h ad.advertiser.name %></td>
+    <td><%=h ad.frequency %></td>
+    <td><%=h ad.start_date %></td>
+    <td><%=h ad.end_date %></td>
+    <td><%=h ad.format %></td>
+    <td>
+		 <% ad.ad_locations.each do |location| %>
+			<%=h location.location %>
+		 <% end %>
+	 </td>
+    <td><%=h ad.published %></td>
+    <td><%=h ad.time_constrained %></td>
+    <td><%= link_to 'Show', ad %></td>
+    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ad', new_ad_path %>

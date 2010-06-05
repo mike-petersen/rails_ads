@@ -1,0 +1,5 @@
+<%
+ad = Ad.find_ad(local_assigns, logged_in?, "#{@controller.controller_name}/#{@controller.action_name}")
+if ad then %>
+	<%= ad.html %>
+<% end %>

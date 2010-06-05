@@ -1,0 +1,68 @@
+<h1>New ad</h1>
+
+<% form_for(@ad) do |f| %>
+	<%= f.error_messages %>
+
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :advertiser_id %><br />
+		<%= f.select :advertiser_id, Advertiser.find(:all, :order => "name ASC").map {|p| ["[#{p.id}] #{p.name}", p.id]} %>
+	</p>
+	<p>
+		<%= f.label :html %><br />
+		<%= f.text_area :html %>
+	</p>
+	<p>
+		<%= f.label :frequency %><br />
+		<%= f.text_field :frequency %>
+	</p>
+	<p>
+		<%= f.label :start_date %><br />
+		<%= f.datetime_select :start_date %>
+	</p>
+	<p>
+		<%= f.label :end_date %><br />
+		<%= f.datetime_select :end_date %>
+	</p>
+	<p>
+		<%= f.label :format %><br />
+		<%= f.text_field :format %>
+	</p>
+	<p>
+		<%= f.label :width %><br />
+		<%= f.text_field :width %>
+	</p>
+	<p>
+		<%= f.label :height %><br />
+		<%= f.text_field :height %>
+	</p>
+	<p>
+		<%= f.label :published %><br />
+		<%= f.check_box :published %>
+	</p>
+	<p>
+		<%= f.label :time_constrained %><br />
+		<%= f.check_box :time_constrained %>
+	</p>
+	<% f.fields_for :ad_locations do |adlocation| %>
+		<p>
+			<%= adlocation.label :location %><br />
+			<%= adlocation.text_field :location %>
+		</p>
+
+		<% unless adlocation.object.new_record? %>
+			<div>
+				<%= adlocation.label :_delete, 'Remove:' %>
+				<%= adlocation.check_box :_delete %>
+			</div>
+		<% end %>
+	<% end %>
+	<p>
+		<%= f.submit 'Create' %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', ads_path %>

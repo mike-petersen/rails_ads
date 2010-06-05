@@ -1,0 +1,33 @@
+<p>
+  <b>Page:</b>
+  <%=h @ad_view.page %>
+</p>
+
+<p>
+  <b>User type:</b>
+  <%=h @ad_view.user_type %>
+</p>
+
+<p>
+  <b>Ad:</b>
+  <%=h @ad_view.ad_id %>
+</p>
+
+<p>
+  <b>Advertiser:</b>
+  <%=h @ad_view.advertiser_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @ad_view.location %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%=h @ad_view.format %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_view_path(@ad_view) %> |
+<%= link_to 'Back', ad_views_path %>
