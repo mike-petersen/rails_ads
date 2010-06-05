@@ -1,7 +1,8 @@
 <h1>Listing ad_views</h1>
 
-<table>
+<table border="1">
   <tr>
+    <th>Views</th>
     <th>Page</th>
     <th>User type</th>
     <th>Ad</th>
@@ -12,17 +13,13 @@
 
 <% @ad_views.each do |ad_view| %>
   <tr>
+    <td><%=h ad_view.views %></td>
     <td><%=h ad_view.page %></td>
     <td><%=h ad_view.user_type %></td>
-    <td><%=h ad_view.ad_id %></td>
-    <td><%=h ad_view.advertiser_id %></td>
+    <td><%=h ad_view.ad.name %></td>
+    <td><%=h ad_view.advertiser.name %></td>
     <td><%=h ad_view.location %></td>
     <td><%=h ad_view.format %></td>
-    <td><%= link_to 'Show', ad_view %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New ad_view', new_ad_view_path %>

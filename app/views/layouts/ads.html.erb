@@ -1,16 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Ads: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
-</head>
-<body>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<title>Ads: <%= controller.action_name %></title>
+		<style type="text/css">
+		<!--
+		.menu li
+		{
+			float: left;
+			margin-left: 40px;
+		}
+		-->
+		</style>
+	</head>
+	<body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+		<ul class="menu">
+			<li><%= link_to "Advertisers", advertisers_path %></li>
+			<li><%= link_to "Ads", ads_path %></li>
+			<li><%= link_to "AdViews", ad_views_path %></li>
+		</ul>
+		<div style="clear: both;">&nbsp;</div>
 
-<%= yield %>
+		<p style="color: green"><%= flash[:notice] %></p>
 
-</body>
+		<%= yield %>
+
+	</body>
 </html>
