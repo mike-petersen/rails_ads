@@ -1,5 +1,7 @@
 <%
-ad = Ad.find_ad(local_assigns, logged_in?, "#{@controller.controller_name}/#{@controller.action_name}")
-if ad then %>
-	<%= ad.html %>
+if local_assigns[:display_ad].nil? or local_assigns[:display_ad] then
+	ad = Ad.find_ad(local_assigns, logged_in?, "#{@controller.controller_name}/#{@controller.action_name}")
+	if ad then %>
+		<%= ad.html %>
+	<% end %>
 <% end %>
