@@ -7,8 +7,8 @@ class AdViewsController < ApplicationController
 	# GET /ad_views.xml
 	def index
 		@ad_views = AdView.all(
-				:select => "COUNT(*) AS views, ad_id, advertiser_id, user_type, location, page, format",
-				:group => "ad_id, advertiser_id, user_type, location, page, format",
+				:select => "COUNT(*) AS views, ad_id, advertiser_id, user_type, location, page, format, ad_displayed",
+				:group => "ad_id, advertiser_id, user_type, location, page, format, ad_displayed",
 				:order => "views DESC"
 			)
 

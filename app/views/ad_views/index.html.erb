@@ -1,25 +1,31 @@
 <h1>Listing ad_views</h1>
 
 <table border="1">
-  <tr>
-    <th>Views</th>
-    <th>Page</th>
-    <th>User type</th>
-    <th>Ad</th>
-    <th>Advertiser</th>
-    <th>Location</th>
-    <th>Format</th>
-  </tr>
+	<tr>
+		<th>Views</th>
+		<th>Page</th>
+		<th>User type</th>
+		<th>Ad</th>
+		<th>Advertiser</th>
+		<th>Location</th>
+		<th>Format</th>
+	</tr>
 
-<% @ad_views.each do |ad_view| %>
-  <tr>
-    <td><%=h ad_view.views %></td>
-    <td><%=h ad_view.page %></td>
-    <td><%=h ad_view.user_type %></td>
-    <td><%=h ad_view.ad.name %></td>
-    <td><%=h ad_view.advertiser.name %></td>
-    <td><%=h ad_view.location %></td>
-    <td><%=h ad_view.format %></td>
-  </tr>
-<% end %>
+	<% @ad_views.each do |ad_view| %>
+		<tr>
+			<td><%=h ad_view.views %></td>
+			<td><%=h ad_view.page %></td>
+			<td><%=h ad_view.user_type %></td>
+			<% if ad_view.ad_displayed %>
+				<td><%=h ad_view.ad.name %></td>
+				<td><%=h ad_view.advertiser.name %></td>
+				<td><%=h ad_view.location %></td>
+				<td><%=h ad_view.format %></td>
+			<% else %>
+				<td colspan="2">No ad found</td>
+				<td><%=h ad_view.location %></td>
+				<td><%=h ad_view.format %></td>
+			<% end %>
+		</tr>
+	<% end %>
 </table>
