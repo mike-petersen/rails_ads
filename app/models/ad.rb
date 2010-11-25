@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Ad < ActiveRecord::Base
 	has_many   :ad_locations
 	has_many   :ad_views

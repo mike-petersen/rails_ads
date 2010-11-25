@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AdsController < ApplicationController
 	before_filter :check_admin_allowed
 	layout 'ads'

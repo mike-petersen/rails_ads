@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAds < ActiveRecord::Migration
 	def self.up
 		create_table :ads do |t|

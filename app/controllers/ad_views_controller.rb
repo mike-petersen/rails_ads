@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AdViewsController < ApplicationController
 	unloadable
 	before_filter :check_admin_allowed

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAdLocations < ActiveRecord::Migration
 	def self.up
 		create_table :ad_locations do |t|
