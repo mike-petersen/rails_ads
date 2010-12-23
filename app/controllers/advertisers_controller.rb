@@ -1,5 +1,5 @@
 class AdvertisersController < ApplicationController
-	before_filter :check_admin_allowed
+	require_role 'advertisers'
 	layout 'ads'
 
 	# GET /ads

@@ -1,6 +1,6 @@
 class AdViewsController < ApplicationController
 	unloadable
-	before_filter :check_admin_allowed
+	require_role 'ad_views'
 	layout 'ads'
 
 	# GET /ad_views
