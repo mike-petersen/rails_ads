@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAdViews < ActiveRecord::Migration
 	def self.up
 		create_table :ad_views do |t|

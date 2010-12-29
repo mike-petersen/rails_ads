@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AdsController < ApplicationController
 	require_role 'ads'
 	layout 'ads'

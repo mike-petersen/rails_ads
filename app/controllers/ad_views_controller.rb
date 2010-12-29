@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AdViewsController < ApplicationController
 	unloadable
 	require_role 'ad_views'
