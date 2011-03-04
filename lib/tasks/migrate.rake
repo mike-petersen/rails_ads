@@ -11,4 +11,14 @@ namespace :db do
       Rake::Task["db:schema:dump"].invoke if ActiveRecord::Base.schema_format == :ruby
     end
   end
+	namespace :fixtures do
+		desc "Fixtures here"
+		task :rails_ads => :environment do
+			require 'active_record/fixtures'
+			fixture_dir = "vendor/plugins/rails_ads/test/fixtures/"
+			tables = Dir["#{fixture_dir}/*.yml"]
+			tables.collect! {|t| File.basename(t, '.yml')}
+			Fixtures.create_fixtures(fixture_dir, tables)
+		end
+	end
 end
